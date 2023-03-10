@@ -1,0 +1,41 @@
+<%- include('./includes/_main_head') %>
+<%- include('./includes/style/style') %>
+<%- include('./includes/_header') %>
+<!-- main site -->
+<div class="allUser">
+    <a href="/" class="text-decoration-none"><span class="shadow-lg mb-2 rounded "><i class="fa fa-angle-double-left"></i> All Users <i class="fa-solid fa-users"></i></span></a>
+</div>
+<div class="text-center">
+    <h2>Update User</h2>
+    <span>Use the below form to update an account</span>
+</div>
+<form id="update_user" method="POST" class="ms-3">
+    <div class="adduserform">
+    <div class="form-group">
+        <label for="name">Name</label>
+        <input type="hidden" name="id "/>
+        <input type="text" name="name" class="form-control" placeholder="Tola Lemma" />
+    </div>
+    <div class="form-group">
+        <label for="email">Email</label>
+        <input type="email" name="email" class="form-control" placeholder="tolalemma@gmail.com" />
+    </div>
+    <div class="form-group mt-2">
+        <label for="gender">Gender</label>
+        <input type="radio" name="gender" value="Male" class="ms-5"/>
+        <label for="gender">Male</label>
+        <input type="radio" name="gender" value="Female" class="ms-3"/>
+        <label for="gender">Female</label>
+    </div>
+    <div class="form-group mt-3 mb-3">
+        <label for="status">Status</label>
+        <input type="radio" name="status" value="Active" class="ms-5"/>
+        <label for="gender">Active</label>
+        <input type="radio" name="status" value="Inactive"class="ms-3" />
+        <label for="gender">InActive</label>
+    </div>
+    <div class="form-group d-grid">
+       <input type="submit" value="Save" class="btn btn-primary  mt-3"/>
+    </div>
+</div>
+</form>
