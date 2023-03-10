@@ -14,7 +14,7 @@ app.use(morgan('tiny'))
 // parse request to bodyparser
 app.use(bodyparser.urlencoded({extended: true}))
 
-//set view engine
+//set view engine with .ejs extension
 app.set('view engine', 'ejs')
 // app.set('views',path.resolve(__dirname, 'views/ejs'))
 
@@ -25,4 +25,7 @@ app.set('/js', express.static(path.resolve(__dirname, 'assets/js')));
 app.get('/',(req,res) => {
    res.render('index');
 });
+app.get('/add-user',(req,res) => {
+    res.render('add_user');
+ });
 app.listen(PORT,()=>console.log(`Server is running on http://localhost:${PORT} ...`))
