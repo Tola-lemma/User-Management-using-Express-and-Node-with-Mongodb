@@ -17,6 +17,11 @@ app.use(bodyparser.urlencoded({extended: true}))
 //set view engine
 app.set('view engine', 'ejs')
 // app.set('views',path.resolve(__dirname, 'views/ejs'))
+
+//load assests
+app.set('/CSS'.express.static(path.resolve(__dirname, 'assets/CSS')));
+app.set('/img'.express.static(path.resolve(__dirname, 'assets/img')));
+app.set('/js'.express.static(path.resolve(__dirname, 'assets/js')));
 app.get('/',(req,res) => {
    res.send('Welcome to crud Application ')
 });
