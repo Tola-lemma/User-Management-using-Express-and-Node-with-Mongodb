@@ -1,0 +1,34 @@
+<style>
+    body{
+        margin: 6px;
+        margin-top: 3px;
+    }
+    .table-hover tbody tr:hover td {
+    background: #06d6a0;
+}
+.rounded-pill:hover{
+background-color: white;
+}
+/* table responsive  */
+@media  only screen and (max-width: 768px){
+    .table-responsive tbody,.table-responsive tr, .table-responsive td{
+  display: block;
+  text-align: left;
+    }
+    .table-responsive thead tr{
+        position: absolute;
+        top: -9999px;
+        left: -9999px;
+    }
+    .table-responsive td{
+        position: relative;
+        padding-left: 50%;
+    }
+    .table-responsive td::before{
+      content: attr(data-title);
+      position: absolute;
+      left: 6px;
+      font-weight: bold;
+    }
+}
+</style>
