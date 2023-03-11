@@ -22,8 +22,24 @@ user
     res.status(500).send({message:err.message || 'some error occurred while creating a create operation'});
 });
 }
-//retrieve and return all users / retrive and return single user
+//retrive and return single user / retrieve and return all users 
 exports.find= (req,res)=>{
+//single user
+if(req.query.id){
+  const id = req.query.id;
+  Userdb.findById(id)
+         .then(data=>{
+            if(!data){
+                res.status(404).send({message: `User not found with id ${id}`});
+            }else{
+            res.status(200).send(data);
+            }
+         })
+         .catch(err=>{
+            res.status(500).send({message:`Error retrieving user with id ${id}`});
+         });
+}else{
+//all users
    Userdb.find()
    .then(user =>{
     res.send(user)
@@ -31,6 +47,7 @@ exports.find= (req,res)=>{
    .catch(err =>{
    res.status(500).send({message:err.message ||`Error while retrieving the user information`});
    })
+}
 }
 //update a new identified user by user id
 exports.update = (req,res)=>{
