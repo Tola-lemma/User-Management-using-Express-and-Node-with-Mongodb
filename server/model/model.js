@@ -10,7 +10,10 @@ var schema = new mongoose.Schema({
     unique: true,
   },
   gender: String,
-  status: String
-});
+  status: String,
+}
+//optional if we want to specify the collection name
+// ,{collection:'Userdbs',}
+);
  const Userdb = mongoose.model('Userdb',schema)
  module.exports = Userdb;
