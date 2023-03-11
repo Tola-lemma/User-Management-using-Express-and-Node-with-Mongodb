@@ -2,7 +2,7 @@ var Userdb = require('../model/model')
 //create and save new user 
 exports.create = (req,res)=>{
 if(!req.body){
-    res.status(400).send({message:'Content cannot be empty!'})
+    res.status(400).send({message:'Content cannot be empty!'});
     return
 }
 //new user
@@ -19,7 +19,7 @@ user
     res.send(data);
   })
   .catch(err =>{
-    res.status(500).send({message:err.message || 'some error occurred while creating a create operation'})
+    res.status(500).send({message:err.message || 'some error occurred while creating a create operation'});
 });
 }
 //retrieve and return all users / retrive and return single user
@@ -43,7 +43,7 @@ exports.update = (req,res)=>{
   Userdb.findByIdAndUpdate (id,req.body,{useFindAndModify:false})
        .then(data=>{
         if(!data){
-            res.status(404).send({message:err.message ||`cannot update user with identified id ${id} or maybe user not found!`})
+            res.status(404).send({message:err.message ||`cannot update user with identified id ${id} or maybe user not found!`});
         } else{
             res.send(data);
         }
@@ -54,5 +54,16 @@ exports.update = (req,res)=>{
 }
 //delete a user with specified user id
 exports.delete = (req,res)=>{
-
+    const id = req.params.id;
+    Userdb.findByIdAndDelete(id)
+           .then(data=>{
+            if(!data){
+                res.status(404).send({message:`Cannot delete user with id ${id} maybe id is wrong!`});
+            }else{
+                res.send({message:`User was deleted successfully!`});
+            }
+           })
+           .catch(err=>{
+            res.status(500).send({message:`Could not delete user with id ${id}`});
+           })
 }
