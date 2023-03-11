@@ -16,12 +16,13 @@
             </tr>
         </thead>
         <tbody>
+            <% for(var i=0; i < users.length; i++) { %>
             <tr>
-                <td data-title="ID">1</td>
-                <td data-title="Name">Tola Lemma</td>
-                <td data-title="@Email">tolalemma@gmail.com</td>
-                <td data-title="Gender">Male</td>
-                <td data-title="status">Active</td>
+                <td data-title="ID"><%= i + 1 %></td>
+                <td data-title="Name"><%= users[i].name %></td>
+                <td data-title="@Email"><%= users[i].email %></td>
+                <td data-title="Gender"><%= users[i].gender %></td>
+                <td data-title="status"><%= users[i].status %></td>
                 <td data-title="Action">
                     <a href="/update-user" class="btn btn-sm shadow-lg rounded-pill text-decoration-none">
                         <span><i class="fas fa-pencil-alt" style="font-size: 10px;"></i></span>
@@ -31,6 +32,7 @@
                     </a>
                 </td>
             </tr>
+            <% } %>
         </tbody>
     </table>
 </div>
