@@ -10,7 +10,7 @@ var schema = new mongoose.Schema({
     unique: true,
   },
   gender: String,
-  status: String,
+  status: String
 });
- const userdb = mongoose.model('userdb',schema)
- module.exports = userdb;
+ const Userdb = mongoose.model('Userdb',schema)
+ module.exports = Userdb;
