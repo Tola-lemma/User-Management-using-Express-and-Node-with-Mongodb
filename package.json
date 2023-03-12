@@ -3,9 +3,12 @@
   "version": "1.0.0",
   "description": "node, express crud application with mongodb",
   "main": "server.js",
+  "engines": {
+    "node": "16.14.2"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-      "start": "supervisor server.js"
+      "start": "node server.js"
   },
   "repository": {
     "type": "git",
