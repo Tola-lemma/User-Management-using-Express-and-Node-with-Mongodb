@@ -13,25 +13,25 @@
     <div class="adduserform">
     <div class="form-group">
         <label for="name">Name</label>
-        <input type="hidden" name="id "/>
-        <input type="text" name="name" class="form-control" placeholder="Tola Lemma" />
+        <input type="hidden" name="id" value="<%= user._id%>" />
+        <input type="text" name="name" value="<%= user.name%>" class="form-control"/>
     </div>
     <div class="form-group">
         <label for="email">Email</label>
-        <input type="email" name="email" class="form-control" placeholder="tolalemma@gmail.com" />
+        <input type="email" name="email" value="<%=user.email%>" class="form-control"/>
     </div>
     <div class="form-group mt-2">
         <label for="gender">Gender</label>
-        <input type="radio" name="gender" value="Male" class="ms-5"/>
+        <input type="radio" name="gender" value="Male" class="ms-5" <%= user.gender=='Male'? 'checked':"" %> />
         <label for="gender">Male</label>
-        <input type="radio" name="gender" value="Female" class="ms-3"/>
+        <input type="radio" name="gender" value="Female" class="ms-3" <%= user.gender=='Female'? 'checked':"" %>/>
         <label for="gender">Female</label>
     </div>
     <div class="form-group mt-3 mb-3">
         <label for="status">Status</label>
-        <input type="radio" name="status" value="Active" class="ms-5"/>
+        <input type="radio" name="status" value="Active" class="ms-5" <%= user.status=='Active'? 'checked':"" %>/>
         <label for="gender">Active</label>
-        <input type="radio" name="status" value="Inactive"class="ms-3" />
+        <input type="radio" name="status" value="Inactive"class="ms-3" <%= user.status=='Inactive'? 'checked':"" %>/>
         <label for="gender">InActive</label>
     </div>
     <div class="form-group d-grid">
