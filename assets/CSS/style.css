@@ -1,0 +1,53 @@
+body{
+    margin-left: 2px;
+    margin-top: 2px;
+    margin-right: 0px;
+   }
+    .table-hover tbody tr:hover td {
+    background: #06d6a0;
+}
+.rounded-pill:hover{
+background-color: white;
+}
+/* table responsive  */
+@media  only screen and (max-width: 768px){
+    .table-responsive tbody,.table-responsive tr, .table-responsive td{
+  display: block;
+  text-align: left;
+    }
+    .table-responsive thead tr{
+        position: absolute;
+        top: -9999px;
+        left: -9999px;
+    }
+    .table-responsive td{
+        position: relative;
+        padding-left: 50%;
+    }
+    .table-responsive td::before{
+      content: attr(data-title);
+      position: absolute;
+      left: 6px;
+      font-weight: bold;
+    }
+}
+.table-responsive{
+    margin: 3px;
+    margin-left: 17px;
+}
+
+.allUser{
+    margin-top: 30px;
+   margin-left: 80px;
+   }
+   .user{
+    margin-top: 10px;
+   margin-left: 80px;
+   }
+   .d-grid >h1{
+    font-weight: bold;
+   }
+   .adduserform{
+    margin: 80px;
+    margin-top: 8px;
+   }
