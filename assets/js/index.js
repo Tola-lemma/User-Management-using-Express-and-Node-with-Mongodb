@@ -19,3 +19,21 @@ $.ajax(request).done(function(response){
   alert("Data updated successfully");
 })
 });
+
+if(window.location.pathname =="/"){
+    $ondelete = $('.table tbody td a.delete');
+    $ondelete.click(function(){
+        var id = $(this).attr("data-id");
+
+        var delrequest = {
+            "url" : `http://localhost:3000/api/users/${id}`,
+           "method" :'DELETE'
+        }
+        if(confirm("Are you sure you want to delete?")){
+           $.ajax(delrequest).done(function(response){
+            alert('Data deleted successfully!');
+            location.reload();
+           });
+        }
+    });
+}
